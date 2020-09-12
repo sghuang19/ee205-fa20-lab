@@ -10,9 +10,10 @@ y2 = sin(pi/2*x2);
 stem(n, y1, 'o')
 hold on
 stem(n, y2, '*')
+title('y[n] = sin((pi/2)x[n])')
 xlabel('Time');
 ylabel('y-value')
-legend('y(x1[n])', 'y(x2[n])');
+legend('y(x_1[n])', 'y(x_2[n])');
 
 %Basic Problem b
 n1 = [-5:9];
