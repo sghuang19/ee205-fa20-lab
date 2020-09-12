@@ -1,5 +1,5 @@
 % Define scopes
-l = 3;
+l = 2;
 
 % Basic Problem a
 n = [-l : l];
@@ -7,8 +7,10 @@ x1 = [zeros(1, l) 1 zeros(1, l)];
 x2 = 2*x1;
 y1 = sin(pi/2*x1);
 y2 = sin(pi/2*x2);
-plot(n, y1)
+stem(n, y1, 'o')
 hold on
-plot(n, y2)
-
+stem(n, y2, '*')
+xlabel('Time');
+ylabel('y-value')
+legend('y(x1[n])', 'y(x2[n])');
 
