@@ -16,7 +16,7 @@ legend('y(x1[n])', 'y(x2[n])');
 
 %Basic Problem b
 n1 = [-5:9];
-x0 = [zeros(1,7) ones(1,8)];
-x1 = [zeros(1,7) ones(1,7)];
+x0 = [zeros(1,6) ones(1,9)];
+x1 = [zeros(1,7) ones(1,8)];
 x = x0+x1;
-plot(n1,x)
+plot(n1,x0)
