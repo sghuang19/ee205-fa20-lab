@@ -1,20 +1,23 @@
 % define scope
 l = 10;
 
-%1.4 advanced problem g
-%linearity
-n = [-l:l];
+% 1.4 advanced problem g
+% time-invariance
+% def
 
-% define x[n] = n^2
-x1 = 4 * n.^2; % x[2n] = (2n)^2 = 4n^2
-x2 = 16 * n.^2; % x[2(2n)] = (4n)^2 = 16n^2
-x3 = 8 * n.^2 % 2x[2n] = 8n^2
+n = [-l:l]
+t = 5
+nt = n - t
+x1 = n
+x2 = nt
+y1 = 2 * x1
+y2 = 2 * x2
 
-stem(n, x1);
+stem(n, y1);
 hold on
-stem(n, x2);
+stem(n, y2);
 hold on
-stem(n, x3)
+stem(nt, y1);
 
 title('y[n] = x[2n]');
 xlabel('Time');
