@@ -1,7 +1,7 @@
-diffeqn(1, [1 1 1 1 1], 1)
+% diffeqn(1, [1 1 1 1 1], 1)
 
 function y = diffeqn(a, x, yn1)
-    N = length(a)
+    N = length(x)
     y(1) = a * yn1 + x(1)
 
     for index = 2:N
