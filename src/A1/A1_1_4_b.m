@@ -1,9 +1,10 @@
-%Basic Problem b
-n = [-6 : 9];
-x = [zeros(1, 6) 1/2 ones(1, 9) ]
+% Basic Problem b
+n = [-6:9];
+x = [zeros(1, 6) 1/2 ones(1, 9)]
 x0 = [zeros(1, 6) 1/2 ones(1, 9)];
 x1 = [zeros(1, 5) 1/2 ones(1, 10)];
 y = x0 + x1;
+
 stem(n, x, '*');
 hold on
 stem(n, y);
