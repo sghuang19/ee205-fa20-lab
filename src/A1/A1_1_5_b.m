@@ -1,3 +1,4 @@
+% 1.5 Advanced Problem b
 a = 1;
 yn1 = 0;
 n = 0:1:30;
