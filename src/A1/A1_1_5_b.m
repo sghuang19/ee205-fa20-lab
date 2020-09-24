@@ -5,8 +5,8 @@ n = 0:1:30;
 x1 = [1 zeros(1, 30)];
 x2 = ones(1, 31);
 
-y1 = A1_1_5_a(a, x1, yn1)
-y2 = A1_1_5_a(a, x2, yn1)
+y1 = diffeqn(a, x1, yn1)
+y2 = diffeqn(a, x2, yn1)
 
 stem(n, y1, '*')
 hold on

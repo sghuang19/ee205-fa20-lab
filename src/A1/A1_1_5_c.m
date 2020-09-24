@@ -4,8 +4,8 @@ yn1 = -1;
 x1 = ones(1, 31);
 x2 = 2 * x1;
 
-y1 = A1_1_5_a(a, x1, yn1)
-y2 = A1_1_5_a(a, x2, yn1)
+y1 = diffeqn(a, x1, yn1)
+y2 = diffeqn(a, x2, yn1)
 y3 = y1 .* 2 - y2
 
 stem(n, y1, '')
