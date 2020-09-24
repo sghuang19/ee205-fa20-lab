@@ -2,7 +2,7 @@
 l = 5;
 
 % Basic Problem a
-n = [-l:l];
+n = -l:l;
 x1 = [zeros(1, l) 1 zeros(1, l)];
 x2 = 2 * x1;
 x3 = x1 + x2;
@@ -19,9 +19,9 @@ title('y[n] = sin((pi/2)x[n])')
 xlabel('Time');
 ylabel('Output')
 legend('y_1[n] = sin((pi/2)x_1[n]) + sin((pi/2)x_2[n])', ...
-    'y_2[n] = sin((pi/2)(x_1[n]+x_2[n]))');
+    'y_2[n] = sin((pi/2)(x_1[n]+x_2[n]))')
 
 % define system
 function y = L(x)
-    y = sin(pi / 2 * x)
+    y = sin(pi / 2 * x);
 end
