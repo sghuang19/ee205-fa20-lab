@@ -16,7 +16,8 @@ y2 = n1 .* x2
 % let the original output signal have a time shift: y3[n] = y1[n-1]
 y3 = n2 .* x2
 
-stem(n1, y1, '*g')
+figure(1)
+stem(n1, y1, '*')
 hold on
 stem(n1, y2, '*')
 hold on
@@ -26,7 +27,27 @@ title('y = nx[n]')
 xlabel('Time')
 ylabel('Output')
 legend('y_1[n] = nx[n]', ...
-    'y_1[n] = nx[n - 1]', ...
-    'y_3[n] = (n - 1)x[n - 1]')
+    'y_2[n] = nx[n - 1]', ...
+    'y_3[n] = y_1[n - 1] = (n - 1)x[n - 1]')
 
-% stability and invertible
+% stability
+n4 = double((intmax - 10):intmax)
+x4 = n4.^33
+y4 = n4 .* x4
+
+% invertibility
+n5 = -l:l;
+x5 = 1 ./ n5
+y5 = n5 .* x5
+
+figure(2)
+stem(n5, x5, '')
+hold on
+stem(n5, y5, '')
+
+title('y = nx[n]')
+xlabel('Time')
+ylabel('Output')
+
+legend('x[n] =  1/n', ...
+    'y[n] = nx[n] = 1')
