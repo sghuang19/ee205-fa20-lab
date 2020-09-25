@@ -2,7 +2,7 @@
 l = 5;
 
 % 1.4 Advanced Problem e
-n = [-l:l];
+n = -l:l;
 x = n;
 
 y1 = L(x);
