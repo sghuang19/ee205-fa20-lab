@@ -8,7 +8,7 @@ w = (nx1+1) .* x1;
 yf1 = conv(w,hf2);
 nyf1 = nx1(1)+nhf2(1):nx1(end)+nhf2(end);
 
-xf1 = [1 zeros(1,4)]
+xf1 = [1 zeros(1,4)];
 hf1 = (nhf2+1) .* xf1;
 
 hseries = conv(hf1,hf2);
