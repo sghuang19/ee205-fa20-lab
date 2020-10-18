@@ -6,7 +6,7 @@ h1 = [1 -1 3 0 1];
 h2 = h1;
 
 ny1 = nx1(1)+nh1(1):nx1(end)+nh1(end);
-ny2 = nx1(1)+nh2(1):nx1(end)+nh2(end)
+ny2 = nx1(1)+nh2(1):nx1(end)+nh2(end);
 y1 = conv(x1,h1);
 y2 = conv(x1,h2);
 
