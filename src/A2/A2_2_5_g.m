@@ -13,10 +13,10 @@ end
 
 z1 = conv(h1,x1);
 nz1 = 0:38;
-z2 = conv(h2,x1);
-nz2 = 0:38;
+s1 = conv(x1,h1);
+ns1 = 0:38;
 
-subplot(2,1,1),stem(nz1,z1),axis([0,38,ylim])
-xlabel('n');ylabel('z1');title('z1[n] = h1[n]*x[n]');
-subplot(2,1,2),stem(ns2,s2),axis([0,38,ylim])
-xlabel('n');ylabel('z2');title('z2[n] = h2[n]*x[n]');
+stem(ns1,s1,'o'),axis([0,38,ylim])
+hold on;
+stem(nz1,z1,'*'),axis([0,38,ylim])
+xlabel('n');ylabel('Output');title('s1 and z1');legend('s1','z1');
