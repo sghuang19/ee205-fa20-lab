@@ -35,3 +35,19 @@ subplot(2,2,3),stem(n,y3),axis([0,5,ylim])
 xlabel('n');ylabel('y3');title('y3[n] = cosx3[n]');
 subplot(2,2,4),stem(n,y4),axis([0,5,ylim])
 xlabel('n');ylabel('y4');title('y4[n] = y1[n] + 2*y2[n]');
+
+%System3
+z1 = n.*x1;
+z2 = n.*x2;
+z3 = n.*x3;
+z4 = z1 + 2*z2;
+
+subplot(2,2,1),stem(n,z1),axis([0,5,ylim])
+xlabel('n');ylabel('z1');title('z1[n] = n*x1[n]');
+subplot(2,2,2),stem(n,z2),axis([0,5,ylim])
+xlabel('n');ylabel('z2');title('z2[n] = n*x2[n]');
+subplot(2,2,3),stem(n,z3),axis([0,5,ylim])
+xlabel('n');ylabel('z3');title('z3[n] = n*x3[n]');
+subplot(2,2,4),stem(n,z4),axis([0,5,ylim])
+xlabel('n');ylabel('z4');title('z4[n] = z1[n] + 2*z2[n]');
+
