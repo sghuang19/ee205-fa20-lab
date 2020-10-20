@@ -10,7 +10,7 @@ w2 = conv(h1,x1);
 
 
 subplot(2,1,1),stem(nw,w1),axis([0,13,ylim])
-xlabel('nw');ylabel('x1[n]*h1[n]');
+xlabel('nw');ylabel('Output');title('w1[n]=x1[n]*h1[n]')
 subplot(2,1,2),stem(nw,w1),axis([0,13,ylim])
-xlabel('nw');ylabel('h1[n]*x1[n]');
+xlabel('nw');ylabel('Output');title('w1[n]=h1[n]*x1[n]')
 
