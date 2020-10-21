@@ -10,7 +10,13 @@ ny2 = nx1(1)+nh2(1):nx1(end)+nh2(end);
 y1 = conv(x1,h1);
 y2 = conv(x1,h2);
 
-subplot(2,1,1),stem(ny1,y1),axis([0,15,ylim])
-xlabel('n');ylabel('ye1 = x1[n]*he1[n]');title('ye1');
-subplot(2,1,2),stem(ny2,y2),axis([0,15,ylim])
-xlabel('n');ylabel('ye2 = x1[n]*he2[n]');title('ye2');
+subplot(2,1,1)
+stem(ny1,y1)
+xlabel('n')
+ylabel('ye1')
+title('ye1 = x1[n]*he1[n]')
+subplot(2,1,2)
+stem(ny2,y2)
+xlabel('n')
+ylabel('ye2')
+title('ye2 = x1[n]*he2[n]');
