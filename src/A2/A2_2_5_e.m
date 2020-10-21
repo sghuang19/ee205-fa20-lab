@@ -16,7 +16,13 @@ ns1 = 0:38;
 s2 = conv(x1,h2);
 ns2 = 0:38;
 
-subplot(2,1,1),stem(ns1,s1),axis([0,38,ylim])
-xlabel('n');ylabel('s1');title('s1[n] = x[n]*h1[n]');
-subplot(2,1,2),stem(ns2,s2),axis([0,38,ylim])
-xlabel('n');ylabel('s2');title('s2[n] = x[n]*h2[n]');
+subplot(2,1,1)
+stem(ns1,s1),axis([0,38,ylim])
+xlabel('n');
+ylabel('s1');
+title('s1[n] = x[n]*h1[n]');
+subplot(2,1,2)
+stem(ns2,s2),axis([0,38,ylim])
+xlabel('n');
+ylabel('s2');
+title('s2[n] = x[n]*h2[n]');
