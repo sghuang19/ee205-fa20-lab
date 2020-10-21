@@ -15,4 +15,6 @@ hoa = conv(he,her);
 nhoa = 0:5000;
 
 stem(nhoa,hoa);
-xlabel('n');ylabel('hoa');title('convolution for he and her');
+xlabel('n');
+ylabel('hoa');
+title('convolution for he and her');
