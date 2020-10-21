@@ -14,7 +14,7 @@ her = filter(b2, a2, d);
 hoa = conv(he, her);
 nhoa = 0:5000;
 
-stem(nhoa, hoa)
-xlabel('n')
-ylabel('hoa')
-title('convolution for he and her')
+stem(nhoa, hoa);
+xlabel('n');
+ylabel('hoa');
+title('convolution for he and her');
