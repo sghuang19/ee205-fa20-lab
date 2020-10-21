@@ -6,4 +6,6 @@ b1 = [1 zeros(1,999) 0.5];
 he = filter(b1,a1,x);
 
 stem(n, he);
-xlabel('n');ylabel('Output');title('impulse response : he');
+xlabel('n');
+ylabel('Output');
+title('impulse response : he');
