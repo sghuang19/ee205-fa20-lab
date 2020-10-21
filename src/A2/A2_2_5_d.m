@@ -15,12 +15,12 @@ for i = 1:19
 end
 
 subplot(2, 1, 1)
-stem(n, h1), axis([0, 19, ylim]);
+stem(n, h1)
 xlabel('n');
 ylabel('h1');
 title('h1[n] = 0.6*h1[n-1] + x[n]');
 subplot(2, 1, 2)
-stem(n, h2), axis([0, 19, ylim]);
+stem(n, h2)
 xlabel('n');
 ylabel('h2');
 title('h2[n] = 0.6^n*h2[n] + x[n]');
