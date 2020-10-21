@@ -11,4 +11,4 @@ z1 = filter(b2, a2, y1);
 stem(n, z1);
 xlabel('n');
 ylabel('z1');
-title('$z[n] + 0.5 * z[n-1000] = y[n]$');
+title('z[n] + 0.5 * z[n-1000] = y[n]');
