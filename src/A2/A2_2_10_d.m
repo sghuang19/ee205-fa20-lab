@@ -16,5 +16,4 @@ xlabel('n');
 ylabel('Output');
 title('The Sound Without Echo')
 
-r = filter(1, a, y);
-stem(n, r)
+
