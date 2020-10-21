@@ -28,6 +28,9 @@ plot(2 * p1x - p2x, p2y, 'o')
 N = abs(p1x - p2x);
 
 % calculate the attenuation factor alpha
+% syms x
+% result = solve(p2y / p1y == x / (x^2 + 1), x);
+% alp = result(2)
 alp = sqrt(p2y / p1y);
 
 % cancel the echo using filter
