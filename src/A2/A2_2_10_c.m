@@ -5,7 +5,7 @@ b1 = 1;
 
 her = filter(b1, a1, d);
 
-stem(n, her)
-xlabel('n')
-ylabel('her')
-title('impulse response for d')
+stem(n, her);
+xlabel('n');
+ylabel('her');
+title('impulse response for d');
