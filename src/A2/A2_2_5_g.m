@@ -16,24 +16,29 @@ end
 %The four outputs
 z1 = conv(h1, x1);
 nz1 = 0:38;
-s1 = conv(x1, h1);
-ns1 = 0:38;
+s1 = filter(b1, a1, x1);
 z2 = conv(h2, x1);
 nz2 = 0:38;
-s2 = conv(x1, h2);
-ns2 = 0:38;
+s2(1) = 1;
 
-stem(ns1, s1, 'o')
+for i = 1:19
+    s2(i + 1) = 0.6^i * s2(i) +x1(i + 1);
+end
+
+subplot(2, 1, 1)
+stem(n, s1, 'o')
 hold on;
-stem(nz1, z1, '*'),
+stem(nz1, z1, '*'), axis([0, 19, ylim]);
 xlabel('n');
 ylabel('Output');
 title('s1 and z1');
 legend('s1', 'z1');
 
-stem(ns2, s2, 'o')
+subplot(2, 1, 2)
+stem(n, s2, 'o'),, axis([0, 19, ylim]);
 hold on;
 stem(nz2, z2, '*')
+
 xlabel('n');
 ylabel('Output');
 title('s2 and z2');
