@@ -19,12 +19,12 @@ z2 = conv(h2, x1);
 nz2 = 0:38;
 
 subplot(2, 1, 1)
-stem(nz1, z1), axis([0, 38, ylim])
+stem(nz1, z1), axis([0, 19, ylim])
 xlabel('n');
 ylabel('z1');
 title('z1[n] = h1[n]*x[n]');
 subplot(2, 1, 2)
-stem(nz2, z2), axis([0, 38, ylim])
+stem(nz2, z2), axis([0, 19, ylim])
 xlabel('n');
 ylabel('z2');
 title('z2[n] = h2[n]*x[n]');
