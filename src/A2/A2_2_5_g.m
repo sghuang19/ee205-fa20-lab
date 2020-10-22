@@ -28,7 +28,7 @@ end
 
 subplot(2, 1, 1)
 stem(n, s1, 'o')
-hold on;
+hold on
 stem(nz1, z1, '*')
 axis([0, 19, ylim])
 xlabel('n');
