@@ -5,7 +5,7 @@ x2 = cos(t);
 x2(x2 > 0) = ones(size(x2(x2 > 0)));
 x2(x2 < 0) = -ones(size(x2(x2 < 0)));
 
-b = [1 0];
+b = [0 1];
 a = [1 1];
 y2 = lsim(b, a, x2, t);
 
