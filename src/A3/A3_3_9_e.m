@@ -19,10 +19,25 @@ ysum = lsim(b, a, ssum, t);
 y = lsim(b, a, x, t);
 
 %plot
-plot(t, y)
+subplot(2,1,1),plot(t, y)
 hold on 
 plot(t, ysum)
 xlabel('t')
 ylabel('Output')
 title('Comparison for Harmonic Components Sum and Original Response')
 legend('Original Output','Harmonic Components Sum')
+
+% energy
+k = 1000;
+E = zeros(1,1000);
+e = 0;
+for i = 1:k
+    e = e + (sin(i*pi / 2) / i*pi)^2 + (sin(i*(-pi)/ 2) / i*(-pi))^2
+    E(i) = e;
+end
+
+subplot(2, 1,2)
+plot(t,E)
+xlabel('t')
+ylabel('Energy')
+title('The Energy for x2 CTFS')
