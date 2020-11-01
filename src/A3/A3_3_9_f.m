@@ -15,7 +15,10 @@ s2 = apos_k(2) * exp(j * 2 * t) + aneg_k(2) * exp(-j * 2 * t);
 s3 = apos_k(3) * exp(j * 3 * t) + aneg_k(3) * exp(-j * 3 * t);
 s4 = apos_k(4) * exp(j * 4 * t) + aneg_k(4) * exp(-j * 4 * t);
 s5 = apos_k(5) * exp(j * 5 * t) + aneg_k(5) * exp(-j * 5 * t);
+
 ssum = real(s1 + s2 + s3 + s4 + s5);
+
+% coefficients for y CTFS
 
 % Output 
 b = 1;
@@ -27,6 +30,7 @@ y3 = lsim(b, a, s3, t);
 y4 = lsim(b, a, s4, t);
 y5 = lsim(b, a, s5, t);
 y = lsim(b, a,x2,t);
+
 
 % plot
 subplot(5, 1, 1)
