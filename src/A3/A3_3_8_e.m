@@ -16,13 +16,13 @@ y2 = filter(b2,a2,x);
 
 % plot
 subplot(2,1,1)
-stem(n,y1);
+stem(n,abs(y1));
 xlim([0,99])
 xlabel('n')
 ylabel('y1')
 
 subplot(2,1,2)
-stem(n,y2);
+stem(n,abs(y2));
 xlim([0,99])
 xlabel('n')
 ylabel('y2')
