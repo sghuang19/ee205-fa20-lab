@@ -16,19 +16,19 @@ b2 = 1;
 y2 = filter(b2,a2,x);
 y2_20 = y2(1,20);
 
-a_y1 = 1/20*fft(y1_20);
-a_y2 = 1/20*fft(y2_20);
+a_y1 = (1/20)*fft(y1_20);
+a_y2 = (1/20)*fft(y2_20);
 
 subplot(2,1,1)
 stem(abs(a_y1))
 xlabel('n')
-ylabel('y1')
+ylabel('a_y1')
 title('Magnitude of coefficients of y1')
 
 subplot(2,1,2)
 stem(abs(a_y2))
 xlabel('n')
-ylabel('y2')
+ylabel('a_y2')
 title('Magnitude of coefficients of y2')
 
 
