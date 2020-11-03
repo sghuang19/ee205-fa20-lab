@@ -22,11 +22,11 @@ stem(n, y1);
 xlim([0, 99])
 xlabel('n')
 ylabel('y1')
-text(78, 3, {'energy1 = ',num2str(E1)})
+text(78, 3, {'energy1 = ', num2str(E1)})
 
 subplot(2, 1, 2)
 stem(n, y2);
 xlim([0, 99])
 xlabel('n')
 ylabel('y2')
-text(86, 4, {'energy2 = ',num2str(E2)})
+text(86, 4, {'energy2 = ', num2str(E2)})
