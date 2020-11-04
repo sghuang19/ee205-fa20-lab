@@ -36,29 +36,31 @@ end
 for n = 1:32
     x3_all(n) = a3(1);
 
-    for t = 0:15
-        x3_all(n) = a3(t + 1) * exp(j * t * 2 * pi * (n - 1) / 32) + conj(a3(t + 1)) * exp(-j * t * 2 * pi * (n - 1) / 32);
+    for t = 1:15
+        x3_all(n) = x3_all(n) + a3(t + 1) * exp(j * t * 2 * pi * (n - 1) / 32) + conj(a3(t + 1)) * exp(-j * t * 2 * pi * (n - 1) / 32);
     end
+
+    x3_all(32) = x3_all(n) + a3(17) * exp(j * 17 * 2 * pi * (n - 1) / 32)
 
 end
 
 r = 0:31;
-subplot(2, 2, 1)
+subplot(4, 1, 1)
 stem([0:31], real(x3_2))
 xlabel('n')
 ylabel('x3_2', 'Interpreter', 'none')
 
-subplot(2, 2, 2)
+subplot(4, 1, 2)
 stem(r, real(x3_8))
 xlabel('n')
 ylabel('x3_8', 'Interpreter', 'none')
 
-subplot(2, 2, 3)
+subplot(4, 1, 3)
 stem(r, real(x3_12))
 xlabel('n')
 ylabel('x3_12', 'Interpreter', 'none')
 
-subplot(2, 2, 4)
+subplot(4, 1, 4)
 stem(r, real(x3_all))
 xlabel('n')
 ylabel('x3_all', 'Interpreter', 'none')
