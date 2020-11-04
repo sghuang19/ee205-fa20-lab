@@ -11,7 +11,7 @@ s4 = apos_k(4) * exp(j * 4 * t) + aneg_k(4) * exp(-j * 4 * t);
 s5 = apos_k(5) * exp(j * 5 * t) + aneg_k(5) * exp(-j * 5 * t);
 ssum = real(s1 + s2 + s3 + s4 + s5);
 
-% Output 
+% Output
 b = 1;
 a = [1 1];
 

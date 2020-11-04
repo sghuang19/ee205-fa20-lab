@@ -5,7 +5,6 @@ x2 = cos(t);
 x2(x2 > 0) = ones(size(x2(x2 > 0)));
 x2(x2 < 0) = -ones(size(x2(x2 < 0)));
 
-
 % coefficients for x2 CTFS
 apos_k = 2 * [sin(pi / 2) / pi, sin(pi) / (2 * pi), sin(pi * 3/2) / (3 * pi), sin(2 * pi) / (4 * pi), sin(pi * 5/2) / (5 * pi)];
 aneg_k = 2 * [sin(-pi / 2) / (-pi), sin(-pi) / (-2 * pi), sin(-pi * 3/2) / (-3 * pi), sin(-2 * pi) / (-4 * pi), sin(-pi * 5/2) / (-5 * pi)];
@@ -20,7 +19,7 @@ ssum = real(s1 + s2 + s3 + s4 + s5);
 
 % coefficients for y CTFS
 
-% Output 
+% Output
 b = 1;
 a = [1 1];
 
@@ -29,53 +28,50 @@ y2 = lsim(b, a, s2, t);
 y3 = lsim(b, a, s3, t);
 y4 = lsim(b, a, s4, t);
 y5 = lsim(b, a, s5, t);
-y = lsim(b, a,x2,t);
-
+y = lsim(b, a, x2, t);
 
 % plot
 subplot(5, 1, 1)
 plot(t, y1)
 hold on
-plot(t,y)
+plot(t, y)
 xlim([10 20])
 xlabel('t')
 ylabel('Output')
-legend('y1','y')
+legend('y1', 'y')
 
 subplot(5, 1, 2)
 plot(t, y2)
 hold on
-plot(t,y)
+plot(t, y)
 xlim([10 20])
 xlabel('t')
 ylabel('Output')
-legend('y2','y')
+legend('y2', 'y')
 
 subplot(5, 1, 3)
 plot(t, y3)
 hold on
-plot(t,y)
+plot(t, y)
 xlim([10 20])
 xlabel('t')
 ylabel('Output')
-legend('y3','y')
+legend('y3', 'y')
 
 subplot(5, 1, 4)
 plot(t, y4)
 hold on
-plot(t,y)
+plot(t, y)
 xlim([10 20])
 xlabel('t')
 ylabel('Output')
-legend('y4','y')
+legend('y4', 'y')
 
 subplot(5, 1, 5)
 plot(t, y5)
 hold on
-plot(t,y)
+plot(t, y)
 xlim([10 20])
 xlabel('t')
 ylabel('Output')
-legend('y5','y')
-
-
+legend('y5', 'y')
