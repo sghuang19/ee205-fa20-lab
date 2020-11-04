@@ -1,59 +1,64 @@
-a3_2 = a3(14:18);
-a3_8 = a3(8:24);
-a3_12 = a3(4:28);
+N3 = 32;
+x3 = [ones(1, 8) zeros(1, 24)];
+a3 = 1/N3*fft(x3);
 
-e1 = zeros(1,5);
-e2 = zeros(1,17);
-e3 = zeros(1,25);
-e4 = zeros(1,32);
+a3_2 = [a3(14:18) zeros(1,27)];
+a3_8 = [a3(8:24) zeros(1,15)];
+a3_12 =[a3(4:28) zeros(1,7)];
 
 x3_2 = zeros(1,32);
 x3_8 = zeros(1,32);
 x3_12 = zeros(1,32);
 x3_all = zeros(1,32);
 
-n = 0:31;
+r = 0:31;
 
-for t = -2:2
-    e1(t+3) = exp(j*2*t*pi/32);
+for n = 1:32
+    x3_2(n) = a3(1);
+    for t = 1:2 
+        x3_2(n) = x3_2(n)+a3(t+1)*exp(j*t*pi*(n-1)/16)+conj(a3(t+1))*exp((-j)*t*pi*(n-1)/16);
+    end
 end
 
-for t = -8:8
-    e2(t+9) = exp(j*2*t*pi/32);
+
+for n = 1:32
+    x3_8(n) = a3(1);
+    for t = 1:8
+        x3_8(n) = x3_8(n) + a3(t+1)*exp(j*t*2*pi*(n-1)/32) + conj(a3(t+1))* exp(-j*t*2*pi*(n-1)/32);
+    end
 end
 
-for t = -12:12
-    e3(t+13) = exp(j*2*t*pi/32);
+for n = 1:32
+    x3_12(n) = a3(1);
+    for t = 1:12 
+        x3_12(n) = x3_12(n) + a3(t+1)*exp(j*t*2*pi*(n-1)/32) + conj(a3(t+1))* exp(-j*t*2*pi*(n-1)/32);
+    end
 end
 
-for t = -15:16
-    e4(t+16) = exp(j*2*t*pi/32);
-end
-
-for t = 0:31
-    x3_2(t+1) = sum(a3_2.*(e1.^t));
-    x3_8(t+1) = sum(a3_8.*(e2.^t));
-    x3_12(t+1) = sum(a3_12.*(e3.^t));
-    x3_all(t+1) = sum(a3.*(e4.^t));
+for n = 1:32
+    x3_all(n) = a3(1);
+    for t = 0:15
+        x3_all(n) = a3(t+1)*exp(j*t*2*pi*(n-1)/32) + conj(a3(t+1))* exp(-j*t*2*pi*(n-1)/32);
+    end
 end
 
 subplot(2, 2, 1)
-stem(n,real(x3_2))
+stem([0:31],real(x3_2))
 xlabel('n')
 ylabel('x3_2','Interpreter', 'none')
 
 subplot(2, 2, 2)
-stem(n,real(x3_8))
+stem(r,real(x3_8))
 xlabel('n')
 ylabel('x3_8','Interpreter', 'none')
 
 subplot(2, 2, 3)
-stem(n,real(x3_12))
+stem(r,real(x3_12))
 xlabel('n')
 ylabel('x3_12','Interpreter', 'none')
 
 subplot(2, 2, 4)
-stem(n,real(x3_all))
+stem(r,real(x3_all))
 xlabel('n')
 ylabel('x3_all','Interpreter', 'none')
 
