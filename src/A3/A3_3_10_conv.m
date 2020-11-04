@@ -48,3 +48,22 @@ hold on
 stem(ny, y_f40c, '*')
 legend('with fft()', 'with conv()')
 title('$$y[n]=\sum_{r=0}^{N-1}x[r]h[n-r]$$, $$N=40$$', 'Interpreter', 'latex')
+
+%% Problem h
+N = 80;
+n = 0:N - 1;
+x = 0.9.^n;
+h = 0.5.^n;
+ny = 0:N - 1;
+
+ax_80 = fft(x, N);
+ah_80 = fft(h, N);
+ay_80 = ax_80 .* ah_80;
+y_f80f = ifft(ay_80, N);
+
+figure
+stem(ny, y_f80f)
+hold on
+stem(ny, y_f80c, '*')
+legend('with fft()', 'with conv()')
+title('$$y[n]=\sum_{r=0}^{N-1}x[r]h[n-r]$$, $$N=80$$', 'Interpreter', 'latex')
