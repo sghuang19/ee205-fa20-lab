@@ -1,3 +1,6 @@
+close all
+clear
+
 %% Problem e
 N = 40;
 n = 0:N - 1;
