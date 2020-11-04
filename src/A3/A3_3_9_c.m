@@ -6,8 +6,10 @@ x2(x2 > 0) = ones(size(x2(x2 > 0)));
 x2(x2 < 0) = -ones(size(x2(x2 < 0)));
 
 % coefficients for x2 CTFS
-apos_k = 2 * [sin(pi / 2) / pi, sin(pi) / (2 * pi), sin(pi * 3/2) / (3 * pi), sin(2 * pi) / (4 * pi), sin(pi * 5/2) / (5 * pi)];
-aneg_k = 2 * [sin(-pi / 2) / (-pi), sin(-pi) / (-2 * pi), sin(-pi * 3/2) / (-3 * pi), sin(-2 * pi) / (-4 * pi), sin(-pi * 5/2) / (-5 * pi)];
+for i = 1:5
+    apos_k(i) = 2 * sin(pi * i / 2) / (pi * i);
+    aneg_k(i) = 2 * sin(-pi * i / 2) / (-pi * i);
+end
 
 s1 = apos_k(1) * exp(j * t) + aneg_k(1) * exp(-j * t);
 s2 = apos_k(2) * exp(j * 2 * t) + aneg_k(2) * exp(-j * 2 * t);
