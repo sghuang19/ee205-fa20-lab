@@ -7,5 +7,4 @@ y = exp(-2 .* abs(t - 5));
 Y = fftshift(tau * fft(y));
 
 plot(real(Y))
-xlabel('\omega')
 ylabel('Y(j\omega)')
