@@ -6,5 +6,6 @@ x = exp(-2 .* abs(t));
 y = exp(-2 .* abs(t - 5));
 Y = fftshift(tau * fft(y));
 
-plot(real(Y))
+plot(abs(Y))
+xlabel('N')
 ylabel('Y(j\omega)')
