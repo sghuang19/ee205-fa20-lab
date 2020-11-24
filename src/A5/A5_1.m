@@ -7,6 +7,7 @@ sig = repmat(y, 5, 1);
 [Pxx, w] = periodogram(sig, [], 512, fs);
 b = fir2(3000, w / (fs / 2), sqrt(Pxx / max(Pxx)));
 plot(w, Pxx)
+title('power spectrum density of the speech signal')
 xlabel('frequency')
 ylabel('power spectral density')
 
