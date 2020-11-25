@@ -24,3 +24,42 @@ y = sig + 10^(-1/4) * ssn;
 y = y / norm(y) * norm(sig);
 norm(sig)
 norm(y)
+
+%% part 3
+y = abs(y);
+figure
+
+[b, a] = butter(2, 100 / (fs / 2));
+env = filter(b, a, y);
+subplot(3, 1, 1)
+plot(env)
+title('f_{cut} = 100Hz')
+hold on
+
+[b, a] = butter(2, 200 / (fs / 2));
+env = filter(b, a, y);
+subplot(3, 1, 2)
+plot(env)
+title('f_{cut} = 200Hz')
+hold on
+
+[b, a] = butter(2, 300 / (fs / 2));
+subplot(3, 1, 3)
+env = filter(b, a, y);
+plot(env)
+title('f_{cut} = 300Hz')
+
+% ====================================
+
+[b, a] = butter(2, 200 / (fs / 2));
+env = filter(b, a, y);
+subplot(2, 1, 1)
+plot(env)
+title('2nd-order')
+hold on
+
+[b, a] = butter(6, 200 / (fs / 2));
+env = filter(b, a, y);
+subplot(2, 1, 2)
+plot(env)
+title('6th-order')
